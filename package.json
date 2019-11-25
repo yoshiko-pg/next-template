@@ -8,9 +8,10 @@
     "start": "next start",
     "lint": "eslint '**/*.@(js|ts|tsx)'",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier '**/*.@(js|ts|tsx)'",
-    "format:check": "npm run format -- --list-different",
-    "format:fix": "npm run format -- --write"
+    "format:js": "prettier '**/*.@(js|ts|tsx)'",
+    "format:css": "stylelint '**/*.css'",
+    "format:check": "npm run format:js -- --list-different && npm run format:css",
+    "format:fix": "npm run format:js -- --write && npm run format:css -- --fix"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -33,6 +34,10 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "prettier": "^1.19.1",
+    "stylelint": "^12.0.0",
+    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
     "typescript": "^3.7.4"
   }
 }
