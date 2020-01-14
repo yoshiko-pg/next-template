@@ -1,0 +1,88 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "jsx": true,
+    "project": "./tsconfig.eslint.json",
+    "tsconfigRootDir": ".",
+  },
+  "env": {
+    "browser": true,
+    "jest/globals": true,
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks",
+    "jest",
+    "prettier",
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+  ],
+  "rules": {
+    /**
+    * @description rules of eslint official
+    */
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": ["**/*.stories.tsx"],
+      "optionalDependencies": false,
+    }],
+    "no-unused-expressions": [
+      "warn",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true,
+      }
+    ], // https://eslint.org/docs/rules/no-unused-expressions
+    "no-use-before-define": "off", // duplidate @typescript-eslint/no-use-before-define
+    "no-param-reassign": ["error", {
+      "props": false,
+    }],
+    /**
+    * @description rules of @typescript-eslint
+    */
+    "@typescript-eslint/explicit-function-return-type": "off", // annoying to force return type
+    "@typescript-eslint/no-unused-vars": "error",
+    /**
+    * @description rules of eslint-plugin-react
+    */
+    "react/jsx-indent": "off",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [
+          ".jsx",
+          ".tsx",
+        ]
+      }
+    ], // also want to use with ".tsx"
+    "react/prop-types": "off", // Is this incompatible with TS props type?
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-curly-newline": "off", // prettierと競合する
+    /**
+    * jsx-a11y
+    */
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    /**
+    * @description rules of eslint-plugin-react-hooks
+    */
+    "react-hooks/rules-of-hooks": "error",
+    /**
+    * @description rules of eslint-plugin-prettier
+    */
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false,
+      }
+    ]
+  }
+}
