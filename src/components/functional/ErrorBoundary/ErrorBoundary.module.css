@@ -1,8 +1,0 @@
-.errorBoundary {
-  /* TBD */
-}
-
-.errorBoundary .error {
-  margin-bottom: 16px;
-  color: var(--color-negative);
-}

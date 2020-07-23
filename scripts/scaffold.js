@@ -65,24 +65,18 @@ export default withAuth(${name}Page)
 const pageOuterTemplate = `
 import React from 'react'
 
-import { ErrorBoundary } from '@/components/functional/ErrorBoundary'
-import { Suspense } from '@/components/functional/Suspense'
-import { LoginedHeader } from '@/components/ui/LoginedHeader'
-import { CenteringContent } from '@/components/ui/CenteringContent'
+import { Header } from '@/components/ui/Header'
+import { Content } from '@/components/ui/Content'
 
 import { ${name} } from './${name}'
 
 export const ${name}Page = () => (
   <>
-    <LoginedHeader />
+    <Header />
 
-    <CenteringContent>
-      <ErrorBoundary>
-        <Suspense>
-          <${name} />
-        </Suspense>
-      </ErrorBoundary>
-    </CenteringContent>
+    <Content>
+      <${name} />
+    </Content>
   </>
 )
 `
