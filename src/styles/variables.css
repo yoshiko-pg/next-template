@@ -1,0 +1,30 @@
+:root {
+  /* primitive color */
+  --__COLOR_BLUE: #0000ff;
+  --__COLOR_BLACK: #333333;
+  --__COLOR_GRAY: #aaaaaa;
+  --__COLOR_WHITE: #ffffff;
+  --__COLOR_RED: #f04a40;
+
+  /* color */
+  --color-main: var(--__COLOR_BLUE);
+  --color-sub: var(--__COLOR_GRAY);
+  --color-background: var(--__COLOR_WHITE);
+  --color-border: var(--__COLOR_GRAY);
+  --color-inactive: var(--__COLOR_GRAY);
+  --color-text: var(--__COLOR_BLACK);
+  --color-text-note: var(--__COLOR_GRAY);
+  --color-negative: var(--__COLOR_RED);
+
+  /* z-index */
+  --zIndex-base: 0;
+  --zIndex-front: 1;
+  --zIndex-back: -1;
+  --zIndex-portal: 10;
+
+  /* transition */
+  --transition-background: background-color 0.15s ease-out;
+  --transition-color: color 0.15s ease-out;
+  --transition-transform: transform 0.15s ease-out;
+  --transition-opacity: opacity 0.15s ease-out;
+}

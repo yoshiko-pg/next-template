@@ -3,15 +3,20 @@
     "stylelint-config-standard",
     "stylelint-config-recess-order"
   ],
-    "plugins": [
-      "stylelint-order"
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "declaration-block-no-duplicate-properties": true,
+    "no-descending-specificity": null,
+    "rule-empty-line-before": null,
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["global"]
+    }],
+    "color-hex-length": "long",
+    "order/order": [
+      "custom-properties",
+      "declarations"
     ],
-    "rules": {
-      "no-descending-specificity": null,
-      "rule-empty-line-before": null,
-      "order/order": [
-        "custom-properties",
-        "declarations"
-      ],
-    }
+  }
 }

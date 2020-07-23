@@ -7,12 +7,10 @@
   },
   "env": {
     "browser": true,
-    "jest/globals": true,
   },
   "plugins": [
     "@typescript-eslint",
     "react-hooks",
-    "jest",
     "prettier",
   ],
   "extends": [
@@ -23,24 +21,49 @@
     "prettier/@typescript-eslint",
   ],
   "rules": {
+    "no-alert": "error",
+    "no-console": "error",
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "import/no-relative-parent-imports": "error",
     /**
     * @description rules of eslint official
     */
-    "import/no-extraneous-dependencies": ["error", {
-      "devDependencies": ["**/*.stories.tsx"],
-      "optionalDependencies": false,
-    }],
-    "no-unused-expressions": [
-      "warn",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.tsx"
+        ],
+        "optionalDependencies": false,
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-expressions": [
+      "error",
       {
         "allowShortCircuit": true,
         "allowTernary": true,
       }
-    ], // https://eslint.org/docs/rules/no-unused-expressions
+    ], // https://github.com/facebook/create-react-app/issues/8107
+    "no-unused-expressions": "off", // duplidate @typescript-eslint/no-unused-expressions
     "no-use-before-define": "off", // duplidate @typescript-eslint/no-use-before-define
-    "no-param-reassign": ["error", {
-      "props": false,
-    }],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false,
+      }
+    ],
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
     /**
     * @description rules of @typescript-eslint
     */
@@ -50,8 +73,15 @@
     * @description rules of eslint-plugin-react
     */
     "react/jsx-indent": "off",
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": false,
+        "assignment": false
+      }
+    ],
     "react/jsx-filename-extension": [
-      "warn",
+      "error",
       {
         "extensions": [
           ".jsx",
@@ -60,16 +90,23 @@
       }
     ], // also want to use with ".tsx"
     "react/prop-types": "off", // Is this incompatible with TS props type?
+    "react/require-default-props": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-curly-newline": "off", // prettierと競合する
+    "react/state-in-constructor": [
+      "error",
+      "never"
+    ],
     /**
     * jsx-a11y
     */
+    "jsx-a11y/no-autofocus": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/label-has-for": "off",
     "jsx-a11y/control-has-associated-label": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/media-has-caption": "off",
     /**
     * @description rules of eslint-plugin-react-hooks
     */

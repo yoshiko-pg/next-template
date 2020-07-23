@@ -1,0 +1,12 @@
+.centering {
+  display: flex;
+  height: 100%;
+}
+
+.centering.horizontal {
+  justify-content: center;
+}
+
+.centering.vertical {
+  align-items: center;
+}

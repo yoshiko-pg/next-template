@@ -1,0 +1,17 @@
+.reset {
+  text-decoration: none;
+}
+
+.link {
+  --color: var(--color-main);
+
+  color: var(--color);
+  text-decoration: none;
+}
+.link:not(.disabled):hover {
+  text-decoration: underline;
+}
+
+.disabled {
+  cursor: default;
+}

@@ -1,0 +1,23 @@
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Kaku Gothic",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-text);
+  overflow-wrap: break-word;
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
